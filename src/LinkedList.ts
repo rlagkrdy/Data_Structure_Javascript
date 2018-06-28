@@ -18,6 +18,34 @@ export class LinkedList {
         this.length++;
     }
 
+    insertAt(data: any, idx: number): void {
+        let node: Node = new Node(data),
+            curr: Node = this.header,
+            next: Node = null,
+            index: number = -1;
+        if (idx > this.length) {
+            return;
+        }
+
+        this.length++;
+        if (idx === 0) {
+            next = curr;
+            this.header = node;
+            this.header.next = next;
+        } else {
+            while (curr) {
+                index += 1;
+                if (index === idx - 1) {
+                    next = curr.next;
+                    curr.next = node;
+                    node.next = next;
+                    return;
+                }
+                curr = curr.next;
+            }
+        }
+    }
+
     delete(idx: number): void {
         let curr: Node = this.header,
             index: number = -1;
@@ -45,9 +73,11 @@ export class LinkedList {
 
     deleteList(): void {
         this.header = null;
+        this.length = 0;
     }
 
     deleteLast(): void {
+        console.log(this.length);
         this.delete(this.length - 1);
     }
 

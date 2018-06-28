@@ -81,5 +81,31 @@ describe('Linked List Test', () => {
     it('deleteList() :: 모든 요소를 삭제한다.', () => {
         linkedList.deleteList();
         should(linkedList['header']).be.equal(null);
+        should(linkedList['length']).be.equal(0);
+    });
+
+    it('insertAt(data, index) :: 함수가 실행되면 해당 index에 해당 node가 들어가고, 원래 노드는 next로 맵핑 되야 한다.', () => {
+        linkedList.insert('test1');
+        linkedList.insert('test2');
+        linkedList.insertAt('test3', 1);
+        should(linkedList.indexOf('test3')).be.equal(1);
+        should(linkedList.indexOf('test2')).be.equal(2);
+    });
+
+    it('insertAt(data, 0) :: 함수가 실행되면 index 0에 노드가 들어가고 원래 노드는 next로 맵핑 된다.', () => {
+        linkedList.insertAt('test0', 0);
+        should(linkedList.indexOf('test0')).be.equal(0);
+        should(linkedList.indexOf('test1')).be.equal(1);
+        should(linkedList.indexOf('test2')).be.equal(linkedList.count() - 1);
+
+        linkedList.deleteList();
+        linkedList.insertAt('test0', 0);
+        should(linkedList.indexOf('test0')).be.equal(0);
+    });
+
+    it('insertAt(data, index) :: index가 length보다 크면 insert가 안되야 한다.', () => {
+        linkedList.deleteList();
+        linkedList.insertAt('test0', 2);
+        should(linkedList.indexOf('test0')).be.equal(-1);
     });
 });
