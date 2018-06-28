@@ -1,4 +1,4 @@
 --require ts-node/register
 --recursive
 --timeout 40000
-test/**/**.spec.ts
+test/**/Stack.spec.ts
