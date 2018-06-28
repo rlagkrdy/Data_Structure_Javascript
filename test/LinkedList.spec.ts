@@ -1,5 +1,5 @@
 import * as mocha from 'mocha';
-import { LinkedList, Node } from '../src/LinkedList';
+import { LinkedList, Node } from '../src/LinkedList/LinkedList';
 import * as should from 'should';
 import * as chai from 'chai';
 
