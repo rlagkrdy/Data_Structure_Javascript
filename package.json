@@ -17,6 +17,7 @@
         "morgan": "^1.9.0",
         "mysql": "^2.15.0",
         "nodemailer": "^4.4.2",
+        "npm": "^6.1.0",
         "npm-run-all": "^4.1.2",
         "promise": "^8.0.1",
         "promise-mysql": "^3.2.1",
