@@ -1,6 +1,5 @@
 import * as mocha from 'mocha';
 import * as should from 'should';
-import * as chai from 'chai';
 import { Stack } from '../src/Stack/Stack';
 
 describe('Stack test', () => {

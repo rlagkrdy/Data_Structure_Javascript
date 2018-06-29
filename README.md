@@ -2,7 +2,9 @@
 
 ## Linked List 연결리스트(구현완료)
 
-## Stack 스택(구현중...)
+## Stack 스택(구현완료)
+
+## Queue 큐(구현완료)
 
 ## Licensing
 
